@@ -9,14 +9,29 @@ $(document).ready(function(){
     {name: "Limes", status: "complete", price: ".33", quantity: 3},
     {name: "Jalapeno", status: "complete", price: ".15", quantity: 2}
   ];
-  
-  
+
+
 //1. Add groceries to <ul>. Store status, price and quantity as data attributes
+
+for(var i = 0; i < groceries.length; i++){
+  var name = 'data-name="' + groceries[i].name + '" ';
+  var status = 'data-status="' + groceries[i].status + '" ';
+  var price = 'data-price="' + groceries[i].price + '" ';
+  var quantity = 'data-quantity="' + groceries[i].quantity + '" ';
+  $('#list').append('<li ' + name + status + price + quantity + '>' + groceries[i].name + '</li');
+}
 
 //2. Give 'needed' items a background-color of your choosing. Do the same for 'complete' items.
 //   Choose any text color you desire.
+$('#list li[data-status="needed"]').css({"background-color": "#F22613", "color": "#fff"});
+
+$('#list li[data-status="complete"]').css({"background-color": "#44CD88", "color": "#fff"});
 
 //3. Display the item quantity next to it's name. (  i.e. Tomatoes (5)  )
+// $('#list li').append(function(e){
+//   $(this).data('price');
+// };
+
 
 //4. Display total quantity and cost on the page.
 

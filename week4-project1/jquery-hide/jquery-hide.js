@@ -19,3 +19,10 @@ $(document).ready( function () {
 	$("tr:odd").hide();
 
 });
+
+//6. hide all p's
+$('p').on('click', function () {
+	$(this).hide();
+})
+
+//7. 
